@@ -1,96 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+body {
+  font-family: 'Proxima Nova', sans-serif;
+  margin: 0; /* Retirer la marge par défaut du body */
+  padding: 0; /* Retirer le padding par défaut du body */
+}
+
 /* Menu de navigation */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #292D34;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-item {
-    font-size: 16px;
-    text-decoration: none;
-    color: #292D34;
-    padding-bottom: 5px;
-    position: relative;
-  }
-  
-  .nav-item.active {
-    color: #98BD4F;
-    font-weight: bold;
-  }
-  
-  .nav-item.active::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #98BD4F;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  
-  .login-btn {
-    background-color: #98BD4F;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-  }
-  
-  .icon {
-    font-size: 20px;
-  }
-  
-  /* Section de téléchargement de l'application */
-  .download-app {
-    background-color: #98BD4F;
-    border-radius: 20px;
-    width: 60%;
-    margin: 40px auto; /* 20% de marge de chaque côté */
-    padding: 40px;
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-  
-  .download-app::before {
-    content: '';
-    background-image: url('path/to/your/pattern.png'); /* Image transparente */
-    background-size: cover;
-    opacity: 0.2; /* Transparence du motif */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px;
-  }
-  
-  .download-content {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .download-content p {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 0 10%; /* Marge de 10% à gauche et à droite */
+}
+
+.logo-img {
+  width: 200px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  font-size: 16px;
+  text-decoration: none;
+  color: #292D34;
+  padding-bottom: 5px;
+  position: relative;
+  font-weight: bold; /* Met en gras les éléments du menu */
+}
+
+.nav-item.active {
+  color: #98BD4F;
+  font-weight: bold;
+}
+
+.nav-item.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #98BD4F;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.login-text {
+  color: #292D34;
+  font-size: 16px;
+}
+
+/* Section de téléchargement de l'application */
+.download-app {
+  background-color: #98BD4F;
+  border-radius: 20px;
+  width: 60%; /* Marge de 10% de chaque côté */
+  height: 200px;
+  margin: 40px auto; /* Centrer avec une marge automatique */
+  padding: 20px;
+  position: relative;
+  text-align: left; /* Alignement à gauche */
+  color: white;
+}
+
+.download-app::before {
+  content: '';
+  background-image: url('../img/partern.png'); 
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+}
+
+.download-content {
+  margin-left: 10%; /* Marge de 10% à gauche */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrer verticalement */
+}
+
+.download-content p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.5; /* Espacement entre les lignes */
+}
+
+/* Div des recettes */
+.recipes-section {
+  margin: 20px 20%; /* Marge de 20% à gauche et à droite */
+}
+
+/* Titre de la section des recettes */
+.recipes-title {
+  color: #98BD4F;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.recipes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line {
+  height: 2px;
+  background-color: #98BD4F;
+  flex: 1;
+  margin-left: 10px; /* Espace entre le titre et la ligne */
+}
+
+/* Section Populaire */
+.popular-section {
+  margin: 20px 20%; /* Marge de 20% à gauche et à droite */
+}
+
+.popular-title {
+  color: #98BD4F;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  border: 1px solid #F4F9FF;
+  border-radius: 20px;
+  flex: 1; /* Prend tout l'espace disponible */
+  margin-right: 10px; /* Espace entre l'input et le bouton */
+  background-color: #F4F9FF;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px; /* Espace sous les filtres */
+}
+
+.filter-btn {
+  background-color: #F4F9FF;
+  color: #292D34;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background-color: #98BD4F; /* Couleur active pour le bouton Tout */
+  color: white;
+}
+
+/* Section des cartes de recettes */
+.recipe-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permet d'afficher les cartes sur plusieurs lignes */
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  width: 30%; /* Largeur de chaque carte (3 par ligne) */
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Pour éviter que le contenu déborde */
+}
+
+.recipe-img {
+  width: 100%;
+  height: auto;
+}
+
+.recipe-info {
+  padding: 15px;
+}
+
+.recipe-name {
+  color: #98BD4F; /* Couleur verte pour les noms de recettes */
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.tag {
+  background-color: #F4F9FF;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+.time {
+  float: right;
+  color: #292D34;
+  font-weight: bold;
+}
+
+/* Section Quelques Chiffres */
+.statistics-section {
+  margin: 40px 20%;
+  padding: 20px;
+  background-image: url('../img/partern.png'); /* Fond de la section */
+  border-radius: 20px; /* Coins arrondis */
+}
+
+.statistics-title {
+  text-align: center; /* Centrer le titre */
+  font-size: 24px; /* Taille du titre */
+  color: #292D34; /* Couleur du titre */
+  margin-bottom: 20px; /* Espace sous le titre */
+}
+
+.statistics-blocks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statistics-block {
+  text-align: center; /* Centrer le contenu des blocs */
+  flex: 1; /* Prendre un espace égal */
+}
+
+.statistics-number {
+  font-size: 32px; /* Taille du nombre */
+  color: #98BD4F; /* Couleur verte */
+}
+
+.statistics-label {
+  font-size: 14px; /* Taille du label */
+  color: #292D34; /* Couleur du label */
+}
+
+/* Section Commentaires */
+.comments-section {
+  text-align: center; /* Centrer le texte */
+  margin: 40px 20%; /* Marge de 40px en haut et en bas, 20% à gauche et à droite */
+}
+
+.comments-title {
+  font-family: 'Sacramento', cursive; /* Police Sacramento */
+  color: #98BD4F; /* Couleur verte */
+  font-size: 24px; /* Taille du titre */
+  margin-bottom: 10px; /* Espace sous le titre */
+}
+
+.comments-subtitle {
+  font-size: 18px; /* Taille de sous-titre */
+  color: #292D34; /* Couleur du texte */
+  margin-bottom: 20px; /* Espace sous le sous-titre */
+}
+
+.quote-icon {
+  width: 50px; /* Ajustez la taille selon vos besoins */
+  height: auto;
+  margin-bottom: 20px; /* Espace sous l'icône */
+}
+
+.comment {
+  font-size: 16px; /* Taille du commentaire */
+  color: #292D34; /* Couleur du texte */
+  margin-bottom: 20px; /* Espace sous le commentaire */
+  padding: 0 20px; /* Padding horizontal */
+}
+
+.circle {
+  width: 70px; /* Largeur du cercle */
+  height: 70px; /* Hauteur du cercle */
+  background-color: #292D34; /* Couleur du cercle */
+  border-radius: 50%; /* Rendre le cercle rond */
+  margin: 0 auto; /* Centrer le cercle */
+}
+
+.author {
+  font-size: 16px; /* Taille de l'auteur */
+  color: #292D34; /* Couleur du texte */
+  margin-top: 10px; /* Espace au-dessus du nom de l'auteur */
+}
+
+/* Footer */
+.footer {
+  background-color: #292D34; /* Couleur du footer */
+  height: 50px; /* Hauteur du footer */
+  text-align: center; /* Centrer le texte */
+  color: white; /* Couleur du texte */
+  padding: 15px; /* Espacement intérieur */
+  margin-top: 20px; /* Espace au-dessus du footer */
+}
